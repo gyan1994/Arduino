@@ -1,0 +1,29 @@
+/*	Author:Gyanendra Sharma,Bangalore,India
+This code is written to test any serial ports on Arduino Mega 2560 and its variants
+using this test code the user can send data to any Serial port from Serial monitor and do the vice-versa.
+*/
+
+char val;		// defining a intermediate Character of DataType "Char" and is global in nature.
+
+
+void setup() //Code in this Section runs only once
+{
+Serial1.begin(9600); //Set baud for SerialPort1 this is also the PORT under test Replace it with PORT u want to test
+Serial.begin(9600);	//Set baud for SerialPort0 Also the PORT used for Debuging and Getting the Response
+Serial.println("Initialising..."); // Send message to the terminal window as "Initialising" to tes the main PORT0 initially
+}
+
+void loop()	//code under this section runs forever "looped!!!"
+{
+  
+	if(Serial1.available() >0) // Check if Data is available on PORT1
+	{
+  	val = Serial1.read();	//If data is available put it into the val
+  	Serial.print(val);	// the value of the Val is printed on the Serial monitor of Arduino
+	}
+	if(Serial.available() > 0) // Check if Data is available on PORT0
+	{
+  	val= Serial.read();	//If data is available put it into the val
+  	Serial1.print(val);	// the value of the Val is sent to the Device connected to Serial PORT1
+	}
+}
