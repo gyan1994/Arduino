@@ -11,6 +11,9 @@ void setup() //Code in this Section runs only once
 Serial1.begin(9600); //Set baud for SerialPort1 this is also the PORT under test Replace it with PORT u want to test
 Serial.begin(9600);	//Set baud for SerialPort0 Also the PORT used for Debuging and Getting the Response
 Serial.println("Initialising..."); // Send message to the terminal window as "Initialising" to tes the main PORT0 initially
+delay(2500);
+Serial.println("Done initialization");
+Serial.println("Thank you...You may go ahead for testing...");
 }
 
 void loop()	//code under this section runs forever "looped!!!"
