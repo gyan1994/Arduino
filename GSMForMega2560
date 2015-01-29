@@ -13,7 +13,7 @@ Serial.begin(9600);	//Set baud for SerialPort0 Also the PORT used for Debuging a
 Serial.println("Initialising..."); // Send message to the terminal window as "Initialising" to tes the main PORT0 initially
 delay(2500);
 Serial.println("Done initialization");
-Serial.println("Thank you...You may go ahead for testing...");
+Serial.println("Thank you...You may go ahead with testing...");
 }
 
 void loop()	//code under this section runs forever "looped!!!"
